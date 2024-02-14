@@ -199,8 +199,9 @@ input:focus {
 @media (min-width: 1024px) {
   body {
     background-color: var(--Charcoal-Grey);
-    display: grid;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
   }
@@ -230,6 +231,10 @@ input:focus {
     margin: 0 auto;
     max-width: 90%;
     border-radius: 10px;
+  }
+
+  .sign-up-form__title {
+    font-size: 2rem;
   }
 
   .seccess-message-container {
