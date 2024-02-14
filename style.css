@@ -1,0 +1,269 @@
+:root {
+  --Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --Tomato: hsl(4, 100%, 67%);
+  --error-message: #ff9494;
+  --imgw: 300;
+  --imgh: 200;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.desktop-header {
+  display: none;
+}
+
+.sign-up-img {
+  background-image: url("./assets/images/illustration-sign-up-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: calc(100vw * var(--imgh) / var(--imgw));
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.sign-up-form__title {
+  padding-bottom: 0.75em;
+  font-size: 1.5rem;
+}
+
+.sign-up-form__description {
+  font-size: 0.8rem;
+}
+
+.features {
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.features > li {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5em;
+  padding-bottom: 1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.075em;
+}
+
+.list-icon {
+  padding-right: 1em;
+  width: 30px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-bottom: 0.7em;
+}
+
+.email-input {
+  padding: 1.1em;
+  border: 1px solid var(--Gray);
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  cursor: pointer;
+}
+
+.email-inout:focus,
+input:focus {
+  outline: none;
+  color: #ff9494;
+}
+
+.error-message {
+  color: var(--error-message);
+  font-size: 0.8em;
+  display: none;
+}
+
+.error-message-input {
+  border: 1px solid var(--error-message);
+  background-color: rgba(255, 148, 148, 0.2);
+}
+
+.error-message-input::placeholder {
+  color: rgba(255, 148, 148);
+  font-weight: bold;
+}
+
+.subscribing-btn {
+  padding: 1em;
+  border: none;
+  background-color: var(--Dark-Slate-Grey);
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.subscribing-btn:hover {
+  background-image: linear-gradient(to right, rgb(185, 84, 101), var(--Tomato));
+}
+
+.seccess-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  display: none;
+}
+
+.seccess-message__icon {
+  width: 50px;
+  margin-bottom: 2em;
+}
+
+.seccess-message__body {
+  font-size: 0.8em;
+  padding: 1em 0;
+}
+
+.seccess-message__title {
+  font-size: 1.8em;
+}
+
+.client-email {
+  font-weight: 700;
+}
+
+.dismiss-btn {
+  padding: 1em;
+  border: none;
+  background-color: var(--Dark-Slate-Grey);
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  width: 100%;
+}
+
+.dismiss-btn:hover {
+  background-image: linear-gradient(to right, rgb(185, 84, 101), var(--Tomato));
+}
+
+.attribution {
+  text-align: center;
+  color: var(--Charcoal-Grey);
+  font-size: 0.9em;
+}
+.attribution a {
+  color: var(--Tomato);
+}
+
+/* show seccess message */
+.show {
+  display: block;
+}
+
+/* hide main page */
+.hide {
+  background-color: red;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-color: var(--Charcoal-Grey);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .desktop-header {
+    display: block;
+  }
+
+  .sign-up-img {
+    background-image: url("./assets/images/illustration-sign-up-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100%;
+    border-radius: 10px;
+  }
+
+  .grid {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 90%;
+    border-radius: 10px;
+  }
+
+  .seccess-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seccess-message {
+    background-color: var(--white);
+    max-width: 40%;
+    /* display: block; */
+    border-radius: 15px;
+  }
+
+  .seccess-message__title {
+    font-size: 2.5em;
+  }
+
+  .seccess-message__body {
+    font-size: 1em;
+    padding: 1em 0;
+  }
+
+  .attribution {
+    color: var(--white);
+  }
+
+  .hide {
+    background-color: red;
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+}
